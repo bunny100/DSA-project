@@ -115,6 +115,7 @@ result.pack()
 bottomframe.pack()
 root.mainloop()
 
+
 #Clearing the text body:
 def	filteredwords(text): 
 	global doc_words
@@ -206,3 +207,4 @@ def	filteredwords(text):
 		doc_words.append(text)
 
 		return True
+
