@@ -45,3 +45,41 @@ for row in myresult:
 #	for key,value in rev_dict.items():
 #		reverse_index(int(key),str(value))
 			#if doc_Id in rev_dict(str(ids):
+
+
+from tkinter import *
+def get():
+    searchvalue=search.get()
+    # search value of searchvalue variable in your files
+    a=""      #store strings that you get output after searching in variable a
+    result.delete(1.0,END)
+    result.insert(INSERT,a)
+
+root=Tk()
+root.title("Search Engine")
+topframe=Frame(root)
+label=Label(text="Simple Wikipedia Search Engine")
+label.pack()
+search=Entry(topframe,width=60)
+
+search.pack()
+searchbutton=Button(topframe,text="Search",command=get)
+searchbutton.pack()
+
+
+
+
+topframe.pack(side=TOP)
+bottomframe=Frame(root)
+scroll=Scrollbar(bottomframe)
+scroll.pack(side=RIGHT,fill=Y)
+result=Text(bottomframe,width=150,height=30,yscrollcommand=scroll.set,wrap=WORD)
+scroll.config(command=result.yview())
+result.config(state=DISABLED)
+result.pack()
+bottomframe.pack()
+root.mainloop()
+
+
+
+
